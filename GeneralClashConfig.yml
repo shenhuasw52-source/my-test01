@@ -304,9 +304,7 @@ dns:
     #geosite:category-games
     #geosite:apple-cn
     #geosite:google-cn
-  default-nameserver:
-    - 119.29.29.29#DIRECT
-    - 223.5.5.5#DIRECT
+
   nameserver:
     - https://doh.pub/dns-query#🎯 全球直连
     - https://dns.alidns.com/dns-query#🎯 全球直连
