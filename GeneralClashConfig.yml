@@ -305,23 +305,18 @@ dns:
     #geosite:apple-cn
     #geosite:google-cn
 
-nameserver:
-  # 国内 DoH / DoT（用于国内域名，保持直连速度）
-  - https://dns.alidns.com/dns-query#🎯 全球直连
-  - tls://dot.pub#🎯 全球直连
-  - https://doh.360.cn#🎯 全球直连
+  nameserver:
+    # 国内（直连，低延迟）
+    - https://dns.alidns.com/dns-query#🎯 全球直连
+    - https://doh.pub/dns-query#🎯 全球直连
+    # 国外（经代理，避免污染）
+    - https://cloudflare-dns.com/dns-query#🚀 节点选择
+    - https://dns.quad9.net/dns-query#🚀 节点选择
 
-  # 国外 DoH（用于国外域名，避免国内 DNS 解析偏差）
-  - https://cloudflare-dns.com/dns-query#🚀 节点选择
-  - https://dns.quad9.net/dns-query#🚀 节点选择
-  - https://dns.adguard-dns.com/dns-query#🚀 节点选择
-
-proxy-server-nameserver:
-  # 解析代理节点域名，必须国内可达、稳定
-  - https://dns.alidns.com/dns-query
-  - https://doh.pub/dns-query
-  - tls://dot.pub
-  - tls://dns.alidns.com
+  proxy-server-nameserver:
+    # 只放国内直连可达的 DNS，用于解析代理节点域名
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
 
     
   #nameserver-policy:
