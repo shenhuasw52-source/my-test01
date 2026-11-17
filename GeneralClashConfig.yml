@@ -305,18 +305,23 @@ dns:
     #geosite:apple-cn
     #geosite:google-cn
 
-  nameserver:
-    # 国内（直连，低延迟）
+  default-nameserver:
     - 223.5.5.5
     - 119.29.29.29
-    - https://dns.alidns.com/dns-query
-    - https://doh.pub/dns-query
 
+  nameserver:
+    # 将 DoH 放在前面，确保优先使用加密解析，从源头避免劫持
+    - https://dns.alidns.com/dns-query#🎯 全球直连
+    - https://doh.pub/dns-query#🎯 全球直连
+    # 保留纯 IP 的 UDP DNS 作为最后兜底（可选），仅在 DoH 全部失败时使用
+    - 223.5.5.5#🎯 全球直连
+    - 119.29.29.29#🎯 全球直连
 
   proxy-server-nameserver:
-    # 只放国内直连可达的 DNS，用于解析代理节点域名
+    # 专用于解析代理节点域名，优先使用最可靠的纯 IP 形式
     - 223.5.5.5
     - 119.29.29.29
+    # 如果仍想保留 DoH 作为补充，放在 IP 之后
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
 
