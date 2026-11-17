@@ -307,12 +307,16 @@ dns:
 
   nameserver:
     # 国内（直连，低延迟）
+    - 223.5.5.5#🎯 全球直连
+    - 119.29.29.29
     - https://dns.alidns.com/dns-query#🎯 全球直连
     - https://doh.pub/dns-query#🎯 全球直连
 
 
   proxy-server-nameserver:
     # 只放国内直连可达的 DNS，用于解析代理节点域名
+    - 223.5.5.5
+    - 119.29.29.29
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
 
