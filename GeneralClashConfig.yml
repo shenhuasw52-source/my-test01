@@ -309,9 +309,7 @@ dns:
     # 国内（直连，低延迟）
     - https://dns.alidns.com/dns-query#🎯 全球直连
     - https://doh.pub/dns-query#🎯 全球直连
-    # 国外（经代理，避免污染）
-    - https://cloudflare-dns.com/dns-query#🚀 节点选择
-    - https://dns.quad9.net/dns-query#🚀 节点选择
+
 
   proxy-server-nameserver:
     # 只放国内直连可达的 DNS，用于解析代理节点域名
